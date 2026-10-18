@@ -1,0 +1,449 @@
+:root {
+  --primary-color: #0088cc;
+  --accent-color: #0088cc;
+  --accent-hover: #0077b3;
+  --accent-light: rgba(0, 136, 204, 0.12);
+  --secondary-color: #f5f5f5;
+  --background-light: #ffffff;
+  --background-dark: #18222d;
+  --surface-light: #ffffff;
+  --surface-dark: #212d3b;
+  --surface-hover-light: #f4f4f5;
+  --surface-hover-dark: #283747;
+  --text-light: #111827;
+  --text-dark: #f3f4f6;
+  --text-secondary-light: #6b7280;
+  --text-secondary-dark: #9ca3af;
+  --sent-bubble-light: #e1ffc7;
+  --sent-bubble-dark: #2b5278;
+  --received-bubble-light: #ffffff;
+  --received-bubble-dark: #212e3b;
+  --header-light: var(--primary-color);
+  --header-dark: #212b36;
+  --border-light: #e5e7eb;
+  --border-dark: #2d3b48;
+  --popup-bg-light: #ffffff;
+  --popup-bg-dark: #212e3b;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  --online-indicator: #10b981;
+  --typing-indicator-color: #0088cc;
+  --tick-sent-color: #9ca3af;
+  --tick-seen-color: #38bdf8;
+  --input-bg-light: #f3f4f6;
+  --input-bg-dark: #273544;
+  --input-border-light: #d1d5db;
+  --input-border-dark: #374758;
+
+  /* Active theme bindings (default dark) */
+  --bg-color: var(--background-dark);
+  --surface-color: var(--surface-dark);
+  --surface-hover: var(--surface-hover-dark);
+  --text-color: var(--text-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --header-bg: var(--header-dark);
+  --header-text: #ffffff;
+  --bubble-sent: var(--sent-bubble-dark);
+  --bubble-received: var(--received-bubble-dark);
+  --bubble-sent-text: #ffffff;
+  --bubble-received-text: var(--text-dark);
+  --border-color: var(--border-dark);
+  --popup-bg: var(--popup-bg-dark);
+  --input-bg: var(--input-bg-dark);
+  --input-border: var(--input-border-dark);
+  --tab-inactive: rgba(255, 255, 255, 0.7);
+  --tab-active: #ffffff;
+  --tab-active-indicator: #ffffff;
+  --actions-bg: #263442;
+  --pinned-chat-bg: #1c2734;
+
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body:not(.dark-theme) {
+  --bg-color: var(--background-light);
+  --surface-color: var(--surface-light);
+  --surface-hover: var(--surface-hover-light);
+  --text-color: var(--text-light);
+  --text-secondary: var(--text-secondary-light);
+  --header-bg: var(--header-light);
+  --header-text: #ffffff;
+  --bubble-sent: var(--sent-bubble-light);
+  --bubble-received: var(--received-bubble-light);
+  --bubble-sent-text: #111827;
+  --bubble-received-text: #111827;
+  --border-color: var(--border-light);
+  --popup-bg: var(--popup-bg-light);
+  --input-bg: var(--input-bg-light);
+  --input-border: var(--input-border-light);
+  --tab-inactive: rgba(255, 255, 255, 0.75);
+  --tab-active: #ffffff;
+  --tab-active-indicator: #ffffff;
+  --actions-bg: #ffffff;
+  --pinned-chat-bg: #f8fafc;
+}
+
+body[data-color-theme="default"] {
+  --primary-color: #0088cc;
+  --accent-color: #0088cc;
+  --accent-hover: #0077b3;
+}
+body[data-color-theme="green"] {
+  --primary-color: #4CAF50;
+  --accent-color: #4CAF50;
+  --accent-hover: #43a047;
+}
+body[data-color-theme="purple"] {
+  --primary-color: #673AB7;
+  --accent-color: #673AB7;
+  --accent-hover: #5e35b1;
+}
+body[data-color-theme="orange"] {
+  --primary-color: #FF9800;
+  --accent-color: #FF9800;
+  --accent-hover: #fb8c00;
+}
+
+body[data-color-theme="default"]:not(.dark-theme) {
+  --header-bg: #0088cc;
+  --sent-bubble-light: #dcf8c6;
+}
+body[data-color-theme="green"]:not(.dark-theme) {
+  --header-bg: #4CAF50;
+  --sent-bubble-light: #dcf8c6;
+}
+body[data-color-theme="purple"]:not(.dark-theme) {
+  --header-bg: #673AB7;
+  --sent-bubble-light: #ede7f6;
+}
+body[data-color-theme="orange"]:not(.dark-theme) {
+  --header-bg: #FF9800;
+  --sent-bubble-light: #fff3e0;
+}
+
+body[data-color-theme="default"].dark-theme {
+  --header-bg: #1e293b;
+  --sent-bubble-dark: #2b5278;
+  --typing-indicator-color: #87c0f0;
+}
+body[data-color-theme="green"].dark-theme {
+  --header-bg: #132e1b;
+  --sent-bubble-dark: #1e4638;
+  --typing-indicator-color: #81c784;
+}
+body[data-color-theme="purple"].dark-theme {
+  --header-bg: #271638;
+  --sent-bubble-dark: #432b68;
+  --typing-indicator-color: #b39ddb;
+}
+body[data-color-theme="orange"].dark-theme {
+  --header-bg: #361e08;
+  --sent-bubble-dark: #5c3510;
+  --typing-indicator-color: #ffcc80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Base Utility Classes */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+  color: inherit;
+}
+.icon-btn:hover {
+  background-color: rgba(150, 150, 150, 0.12);
+}
+.icon-btn:active {
+  background-color: rgba(150, 150, 150, 0.2);
+}
+
+/* Ensure fontawesome and material icons are properly centered without distorting round containers */
+.material-icons-round,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Force all avatar/round elements to never squish */
+[style*="border-radius: 50%"],
+[style*="borderRadius: '50%'"],
+[style*="borderRadius: 50%"] {
+  flex-shrink: 0;
+}
+
+/* Spinner & Skeleton Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skeletonPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Telegram-style Image Shimmer & Loading Animation */
+@keyframes imageShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.image-shimmer-placeholder {
+  background: linear-gradient(
+    90deg,
+    rgba(150, 150, 150, 0.08) 25%,
+    rgba(150, 150, 150, 0.22) 50%,
+    rgba(150, 150, 150, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: imageShimmer 1.4s infinite linear;
+}
+
+/* Call Button Pulse Animations */
+@keyframes callPulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+    transform: scale(1.06);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes callPulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(239, 68, 68, 0);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .icon-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .message-view-back-btn {
+    display: none !important;
+  }
+}
+
+/* Desktop Split-Pane Responsive View */
+.desktop-chatlist-pane {
+  width: 380px;
+  min-width: 320px;
+  max-width: 440px;
+  height: 100%;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: relative;
+  background-color: var(--surface-color);
+}
+
+.desktop-messageview-pane {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+/* Telegram-style Compact Emoji Picker */
+.EmojiPickerReact {
+  border: none !important;
+  background-color: var(--surface-color) !important;
+  box-shadow: none !important;
+}
+
+.EmojiPickerReact .epr-category-nav {
+  display: none !important;
+}
+
+.EmojiPickerReact .epr-header {
+  padding: 6px 12px 2px 12px !important;
+}
+
+.EmojiPickerReact .epr-search-container {
+  padding: 0 !important;
+}
+
+.EmojiPickerReact .epr-search-container input.epr-search {
+  height: 34px !important;
+  font-size: 0.88rem !important;
+  border-radius: 10px !important;
+}
+
+.EmojiPickerReact .epr-emoji-category-label {
+  height: 24px !important;
+  font-size: 0.75rem !important;
+  line-height: 24px !important;
+  padding: 0 8px !important;
+  font-weight: 600 !important;
+  background-color: var(--surface-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+.EmojiPickerReact .epr-body {
+  padding: 0 8px 8px 8px !important;
+}
+
+.EmojiPickerReact .epr-preview {
+  display: none !important;
+}
+
+/* Desktop Empty State */
+.desktop-empty-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: var(--text-secondary);
+  padding: 32px;
+  text-align: center;
+  user-select: none;
+}
+
+/* App-wide Native App Touch & Long-press behavior */
+html, body, #root, * {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Allow text selection ONLY in text inputs and message typing textarea */
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Telegram Message Search Highlight Animation */
+@keyframes messageSearchPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7);
+    background-color: rgba(0, 136, 204, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 136, 204, 0.2);
+    background-color: rgba(0, 136, 204, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
+    background-color: transparent;
+  }
+}
+
+.message-search-highlight {
+  animation: messageSearchPulse 1.8s ease-out !important;
+  border-radius: 12px;
+}

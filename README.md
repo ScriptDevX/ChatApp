@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./public/banner.jpg" alt="FunChat Banner" width="100%" />
+</p>
+
 # FunChat - Setup & Deployment Guide
 
 A fast, real-time messaging and HD voice/video calling web application built with React, Vite, WebRTC, and Firebase Realtime Database.
@@ -157,21 +161,6 @@ Google Sign-In will **not** work until you add your Vercel domain to Firebase Au
 6. Enter your Vercel domain **without** `https://` (e.g. `my-funchat.vercel.app`) and click **Add**.
 
 🎉 **You are all done!** Open your Vercel URL and sign in with Google to start chatting!
-
----
-
-## 📱 Note on Google Login: Web vs Android APK (SHA Fingerprints)
-
-- **For Web Users (Vercel / Browser):**
-  - **No SHA fingerprint is needed!** Firebase Web apps only need Step 4 above (**Authorized domains**). Web Google Sign-In uses standard OAuth popups which do not require device fingerprints.
-
-- **For Android APK / Mobile Wrapper Users (Only if converting to an Android App):**
-  - If you package this app into an Android APK (using an Android WebView bridge or Capacitor):
-    1. Go to **Firebase Console** > **Project settings** (⚙️).
-    2. Under **"Your apps"**, click **"Add app"** and select **Android**.
-    3. Enter your Android Package Name (e.g., `com.example.funchat`).
-    4. Generate your **SHA-1** & **SHA-256** certificate fingerprints (from Android Studio or using `./gradlew signingReport`) and paste them into the **SHA certificate fingerprints** field.
-    5. Download the `google-services.json` into your Android project.
 
 ---
 
